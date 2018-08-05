@@ -2,13 +2,13 @@
 exports.Update = function (req,res) {
 	var connection = require('../model/dbconnection');
 	var response = [];
-	var id=+(req.params.id);
+	var id=req.params.id;
 
 	var name= req.params.Name;
 	var email=req.params.Email;
 	var Age=+(req.params.Age);
 
-	connection.query('UPDATE users SET Name=?,Email = ? ,Age = ? WHERE id = ?', [name,email,Age,id],
+	connection.query('UPDATE users SET Name=?,Email = ? ,Age = ? WHERE username = ?', [name,email,Age,id],
 	function(err, result) {
 		  if (!err){
 
