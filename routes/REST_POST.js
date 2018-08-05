@@ -1,4 +1,4 @@
-// product/api/add/?content=1,2,3,...
+
 exports.Update = function (req,res) {
 	var connection = require('../model/dbconnection');
 	var response = [];
