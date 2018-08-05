@@ -1,16 +1,14 @@
 
 
-// Get all records
-// product/api/get/all?order={orderby}
 exports.getAllRecords = function (req,res) {
 	var connection = require('../model/dbconnection');
-	var val = +(req.params.id);
+	var val = (req.params.id);
 
 	
 
 	
 
-	connection.query('SELECT * from  users WHERE id = ? ',
+	connection.query('SELECT * from  users WHERE username = ? ',
 	[val], function(err, rows, fields) {
   		if (!err){
   			var response = [];
